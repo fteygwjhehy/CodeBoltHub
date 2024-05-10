@@ -1,1 +1,3 @@
-const average = (arr) => arr.reduce((a, v) => a + v, 0) / arr.length;
+// Setup the client
+const aptosConfig = new AptosConfig({ network: APTOS_NETWORK });
+const aptos = new Aptos(aptosConfig);
