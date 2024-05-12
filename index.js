@@ -1,15 +1,7 @@
-function removeNthFromEnd(head, n) {
-  const dummy = new ListNode(0);
-  dummy.next = head;
-  let first = dummy;
-  let second = dummy;
-  for (let i = 1; i <= n + 1; i++) {
-    first = first.next;
+function canJump(nums) {
+  let lastPos = nums.length - 1;
+  for (let i = nums.length - 2; i >= 0; i--) {
+    if (i + nums[i] >= lastPos) lastPos = i;
   }
-  while (first !== null) {
-    first = first.next;
-    second = second.next;
-  }
-  second.next = second.next.next;
-  return dummy.next;
+  return lastPos === 0;
 }
