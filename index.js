@@ -1,7 +1,11 @@
-function canJump(nums) {
-  let lastPos = nums.length - 1;
-  for (let i = nums.length - 2; i >= 0; i--) {
-    if (i + nums[i] >= lastPos) lastPos = i;
+function reverseList(head) {
+  let prev = null;
+  let curr = head;
+  while (curr) {
+    const next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
   }
-  return lastPos === 0;
+  return prev;
 }
