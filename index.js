@@ -1,6 +1,7 @@
-const isPrime = (num) => {
-  for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
-    if (num % i === 0) return false;
+const fibonacci = (n) => {
+  const sequence = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    sequence.push(sequence[i - 1] + sequence[i - 2]);
   }
-  return num > 1;
+  return sequence;
 };
